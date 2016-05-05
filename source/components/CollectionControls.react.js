@@ -24,8 +24,7 @@ var CollectionControls = React.createClass({
 
     return(
       <span>
-        {text} <strong>{this.state.name}</strong>
-        collection
+        {text} <strong>{this.state.name}</strong> collection
       </span>
     );
   },
@@ -43,16 +42,16 @@ var CollectionControls = React.createClass({
       return(
         <CollectionRenameForm name={this.state.name} onChangeCollectionName={this.setCollectionName} onCancelCollectionNameChange={this.toggleEditCollectionName} />
       );
-
-      return(
-        <div>
-          <Header text={this.getHeaderText()} />
-          <Button label="Rename collection" handleClick={this.toggleEditCollectionName} />
-          <Button label="Empty collection" handleClick={this.props.removeAllTweetsFromCollection} />
-          <CollectionExportForm htmlMarkup={this.props.htmlMarkup} />
-        </div>
-      );
     }
+
+    return(
+      <div>
+        <Header text={this.getHeaderText()} />
+        <Button label="Rename collection" handleClick={this.toggleEditCollectionName} />
+        <Button label="Empty collection" handleClick={this.props.onRemoveAllTweetsFromCollection} />
+        <CollectionExportForm htmlMarkup={this.props.htmlMarkup} />
+      </div>
+    );
   }
 });
 

@@ -10,13 +10,13 @@ var Application = React.createClass({
   addTweetToCollection: function(tweet) {
     var collectionTweets = this.state.collectionTweets;
     collectionTweets[tweet.id] = tweet;
-    this.setstate({ collectiontweets: collectiontweets });
+    this.setState({ collectionTweets: collectionTweets });
   },
 
   removeTweetFromCollection: function(tweet) {
     var collectionTweets = this.state.collectionTweets;
     delete collectionTweets[tweet.id];
-    this.setstate({ collectiontweets: collectiontweets });
+    this.setState({ collectionTweets: collectionTweets });
   },
 
   removeAllTweetsFromCollection: function() {
@@ -31,7 +31,7 @@ var Application = React.createClass({
             <Stream onAddTweetToCollection={this.addTweetToCollection} />
           </div>
           <div className="col-md-8">
-            <Collection tweets={this.state.collectionTweets} onRemoveTweetsFromCollection={this.removeTweetsFromCollection} onRemoveAllTweetsFromCollection={this.removeAllTweetsFromCollection} />
+            <Collection tweets={this.state.collectionTweets} onRemoveTweetFromCollection={this.removeTweetFromCollection} onRemoveAllTweetsFromCollection={this.removeAllTweetsFromCollection} />
           </div>
         </div>
       </div>

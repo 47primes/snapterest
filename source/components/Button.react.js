@@ -1,7 +1,7 @@
 var React = require('react');
 
 var buttonStyle = {
-  margin: '10px 10px 10px 0';
+  margin: '10px 10px 10px 0'
 };
 
 var Button = React.createClass({

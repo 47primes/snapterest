@@ -1,6 +1,6 @@
 var React = require('react');
 var Header = require('./Header.react');
-var Button = require('./Button.reqct');
+var Button = require('./Button.react');
 
 var inputStyle = {
   marginRight: '5px'
@@ -33,7 +33,7 @@ var CollectionRenameForm = React.createClass({
   handleFormCancel: function(event) {
     event.preventDefault();
 
-    var.collectionName = this.props.name;
+    var collectionName = this.props.name;
 
     this.setInputValue(collectionName);
 
@@ -53,6 +53,7 @@ var CollectionRenameForm = React.createClass({
         </div>
         <Button label="Change" handleClick={this.handleFormSubmit} />
         <Button label="Cancel" handleClick={this.handleFormCancel} />
+      </form>
     );
   }
 });

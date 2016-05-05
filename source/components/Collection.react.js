@@ -1,5 +1,5 @@
 var React = require('react');
-var ReactDOMServer = require('react-dom-server');
+var ReactDOMServer = require('react-dom/server');
 var CollectionControls = require('./CollectionControls.react');
 var TweetList = require('./TweetList.react');
 var Header = require('./Header.react');
@@ -19,7 +19,7 @@ var Collection = React.createClass({
   },
 
   getNumberOfTweetsInCollection: function() {
-    return this.getListOfTweetIds.length;
+    return this.getListOfTweetIds().length;
   },
 
   render: function() {
@@ -33,7 +33,7 @@ var Collection = React.createClass({
       return(
         <div>
           <CollectionControls numberOfTweetsInCollection={numberOfTweetsInCollection} htmlMarkup={htmlMarkup} onRemoveAllTweetsFromCollection={removeAllTweetsFromCollection} />
-          <Tweet tweets={tweets} onRemoveTweetFromCollection={handleRemoveTweetFromCollection} />
+          <TweetList tweets={tweets} onRemoveTweetFromCollection={handleRemoveTweetFromCollection} />
         </div>
       );
     }
