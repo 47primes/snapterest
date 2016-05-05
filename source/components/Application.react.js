@@ -15,7 +15,7 @@ var Application = React.createClass({
 
   removeTweetFromCollection: function(tweet) {
     var collectionTweets = this.state.collectionTweets;
-    delete(collectionTweets[tweet.id]);
+    delete collectionTweets[tweet.id];
     this.setstate({ collectiontweets: collectiontweets });
   },
 
